@@ -83,6 +83,4 @@ $(function() {
        }, 'json');
    });
    
-   $('.movie:first .header').click();
-    
 });

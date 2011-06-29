@@ -1,3 +1,25 @@
+{% macro render_pagination() %}
+<div class="pagination">
+ <div class="totals">
+    <span class="pagecount">{{ movies|count }}</span> <span class="totalcount">{{ pagination.total }}</span>
+ </div>
+ <div class="pager">
+  {%- for page in pagination.iter_pages() %}
+    {% if page %}
+      {% if page != pagination.page %}
+        <a href="{{ url_for('movies_list', page=page) }}">{{ page }}</a>
+      {% else %}
+        <strong>{{ page }}</strong>
+      {% endif %}
+    {% else %}
+      <span class="ellipsis">…</span>
+    {% endif %}
+  {%- endfor %}
+ </div>
+</div>
+{% endmacro %}
+
+
 {% extends 'base.html' %}
 
 {% block title %}start{% endblock %}
@@ -10,10 +32,15 @@
     <input type="submit" value="Search!">
 </form>
 
+
+{{ render_pagination() }}
+
 <div class="movielist">
 {% for movie in movies %}
 	{% include 'movie.html' %}
 {% endfor %}
 </div>
+
+{{ render_pagination() }}
 
 {% endblock %}

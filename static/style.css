@@ -265,3 +265,46 @@ a, a:link, a:active, a:visited {
     text-align: center;
     min-width: 300px;
 }
+
+/* pagination */
+.pagination {
+    font-size: 11px;
+    margin: 10px 0 10px 0;
+    text-align: center;
+    height: 18px;
+}
+
+.pagination .totals:before {
+    content: '[';
+}
+
+.pagination .totals:after {
+    content: ']';
+}
+
+.pagination .totals .pagecount:after {
+    content: ' /';
+}
+
+.pagination .totals {
+    float: left;
+    color: #666;
+}
+
+.pagination .pager {
+    float: right;
+}
+
+.pagination .pager a {
+    background: #efefef;
+    padding: 2px;
+    margin-left: 4px;
+    border-radius: 1px
+}
+
+.pagination .pager strong {
+    background: #000;
+    color: #fff;
+    padding: 2px 4px;
+    margin-left: 4px;
+}

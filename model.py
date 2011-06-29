@@ -14,7 +14,7 @@ class Movie(db.Model):
     cover = db.Column(db.Binary, nullable=True, default=None)
     
     created_on = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
-    seen_on = db.Column(db.Date, nullable=True, default=None)
+    seen_on = db.Column(db.Date, nullable=True, default=datetime.datetime.now)
 
     rating = db.Column(db.Integer, nullable=False, default=0) # 1 to 3
     

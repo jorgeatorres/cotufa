@@ -9,8 +9,9 @@ from cotufa import app, db, model
 @app.route('/')
 @app.route('/movies/')
 def movies_list():
-    movies = model.Movie.query.order_by('created_on desc').limit(20)
-    return render_template('list.html', movies=movies)
+    pagination= model.Movie.query.order_by('seen_on desc, created_on desc').paginate(int(request.args.get('page', 1)), 30)
+    movies = pagination.items
+    return render_template('list.html', pagination=pagination, movies=movies)
 
 @app.route('/movies/<id>')
 def movies_movie(id):
@@ -66,9 +67,12 @@ def movies_search():
         seen = (model.Movie.query.filter_by(id=m.movieID).count() > 0)
         im.update(m)
 
+        _cast = m.get('cast')
         cast = []
-        for c in m.get('cast')[:5]:
-            cast.append(c['name'])
+
+        if _cast is not None:
+            for c in _cast[:5]:
+                cast.append(c['name'])
         
         results.append({'title': m['title'],
                         'year': m['year'],
