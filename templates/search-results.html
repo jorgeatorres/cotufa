@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}search results{% endblock %}
+
+{% block content %}
+
+    <p style="text-align: right;">
+        <a href="{{ url_for('movies_list') }}">&laquo; Back</a>
+    </p>
+
+    {% if results %}
+    <div class="searchresults">
+        {% for m in results %}
+        <div class="movie {{ 'seen' if m.seen or '' }}">
+            <div class="header">
+                <div class="title">
+                    <h3>{{ m.title }} ({{ m.year }})</h3>
+                </div>
+                
+                <div class="metadata">
+                    {% if not m.seen %}
+                    <a href="{{ url_for('movies_add', id=m.id)}}">[add to list]</a></li>
+                    {% endif %}
+                </div>
+            </div>
+            
+            {% if not m.seen %}
+            <div class="bodywrapper">
+                <div class="body clearfix">
+
+                    {% if m.cover %}
+                    <div class="movie-cover">
+                        <img src="{{ m.cover }}" />
+                    </div>
+                    {% endif %}
+                    
+                    <div class="tabcontent">
+
+                    <div class="movie-details">
+                        {% for c in m.cast %}
+                            {{ c }}, 
+                        {% endfor %}
+                    </div>
+                    
+                    </div>
+
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    
+    {% else %}
+    Nothing found.
+    {% endif %}
+
+{% endblock %}

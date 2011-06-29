@@ -1,0 +1,43 @@
+{% if movie.cover %}
+<div class="movie-cover">
+    <img src="{{ url_for ('movies_cover', id=movie.id) }}" />
+</div>
+{% endif %}
+
+        <div class="tabcontent">
+
+<div class="movie-details">
+
+    <dl>
+        <dt>Director(s)</dt>
+        <dd>
+            <ul class="directorslist">
+                {% for director in movie.directors %}
+                    <li>{{ director.name }}</li>
+                {% endfor %}
+            </ul>
+        </dd>
+
+        <dt>Cast</dt>
+        <dd>
+            <ul class="castlist">
+                {% for c in movie.cast[:5] %}
+                    <li>
+                        <span class="person">{{ c.person.name }}</span>
+                        <span class="character">{{ c.character }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </dd>
+
+        <dt>IMDB link</dt>
+        <dd><a href="http://imdb.com/title/tt{{ movie.id }}">http://imdb.com/title/tt{{ movie.id }}</a></dd>
+    </dl>
+
+</div>
+
+<div class="movie-notes" style="display: none;">
+    <form action="{{ url_for ('movies_notes_save', id=movie.id) }}"><textarea>{{ movie.notes if movie.notes else '' }}</textarea></form>
+</div>
+
+</div>

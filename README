@@ -1,0 +1,18 @@
+(c) 2011 Jorge Torres <jtoresh at gmail.com>
+
+DEPENDENCIES
+
+- Flask: http://flask.pocoo.org/
+- Flask-SQLAlchemy: http://packages.python.org/Flask-SQLAlchemy/
+- IMDBPy: http://imdbpy.sourceforge.net/
+
+HOW TO RUN
+
+- Configure cotufa.cfg with your own settings.
+- Create the database:
+
+    $ python cotufa.py bootstrap
+
+- Enjoy:
+    
+    $ python cotufa.py

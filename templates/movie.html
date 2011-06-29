@@ -1,0 +1,31 @@
+
+<div class="movie" id="movie-{{movie.id}}" rel="{{ url_for('movies_movie', id=movie.id) }}">
+
+<div class="header">
+    <div class="title">
+        <h3>{{ movie.title }} ({{ movie.year }})</h3>
+    </div>
+    
+    <div class="ajaxloader"><img src="{{ url_for('static', filename='ajax-loader.gif') }}" /></div>
+
+    <div class="metadata">
+        <span class="seenon" title="Seen On">Seen on: <span class="value">{{ movie.seen_on if movie.seen_on else '?' }}</span> <input type="text" class="seenoneditor" value="" style="display: none;" rel="{{ url_for('movies_set_attr', id=movie.id, name='seen_on')}}"/>
+        </span>
+        <span class="rating">
+            {% include 'movie-rating.html' %}
+        </span>
+    </div>
+</div>
+
+<div class="bodywrapper" style="display: none;">
+
+    <div class="body clearfix"></div>
+
+    <ul class="actions">
+        <li class="selected"><a href="" rel="movie-details">movie details</a></li>
+        <li><a href="" rel="movie-notes">notes</a></li>
+    </ul>    
+    
+</div>
+
+</div>

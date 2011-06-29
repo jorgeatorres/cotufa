@@ -1,0 +1,11 @@
+{% for i in range(0, 3) %}
+    {% if i < movie.rating %}
+        {% if i == movie.rating - 1 %}
+        <a class="star rating-{{ i }} on" href="{{ url_for('movies_set_attr', id=movie.id, name='rating', value=i) }}"></a>
+        {% else %}
+        <a class="star rating-{{ i }} on" href="{{ url_for('movies_set_attr', id=movie.id, name='rating', value=(i + 1)) }}"></a>
+        {% endif %}
+    {% else %}
+    <a class="star rating-{{ i }}" href="{{ url_for('movies_set_attr', id=movie.id, name='rating', value=(i + 1)) }}"></a>
+    {% endif %}
+{% endfor %}

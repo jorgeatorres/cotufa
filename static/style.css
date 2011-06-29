@@ -1,0 +1,267 @@
+/* reset */
+html {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+a img {
+    border: none;
+}
+
+body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+body {
+    line-height: 1.5;
+    background: #fff;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+/* styles */
+.clearfix {
+	display: block;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+
+body {
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    width: 900px;
+    margin: 20px auto;
+    color: #000;
+}
+
+a, a:link, a:active, a:visited {
+    text-decoration: none;
+}
+
+.movie {
+    margin-bottom: 20px;
+}
+
+.searchresults .movie {
+    margin-bottom: 1px;
+}
+
+.movie .header {
+    background: #696969;
+    color: #fff;
+    padding: 2px 10px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.searchresults .movie.seen .header {
+    background: #efefef;
+}
+
+.searchresults .movie.seen .header .title {
+    text-decoration: line-through !important;
+}
+
+.searchresults .movie .metadata {
+    margin-top: 5px;
+}
+
+.searchresults .movie .metadata a {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+}
+
+.movie .title h3 {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.movie .title {
+    float: left;
+}
+
+.movie .metadata {
+    float: right;
+    margin-right: 10px;
+    color: #ddd;
+}
+
+.movie .body {
+    background: #efefef;
+    padding: 10px 40px 0 40px;
+    border-bottom: solid 1px #aaa;
+}
+
+.movie .bodywrapper {
+
+}
+
+.movie .body dl dt {
+    font-weight: bold;
+    float: left;
+    width: 120px;
+    text-align: right;
+}
+
+.movie .body dl dt:after {
+    content: ':';
+}
+
+.movie .body dl dd {
+    margin-left: 140px;
+}
+
+.movie ul.actions {
+    display: inline-block;
+    background: #dfdfdf;
+    border-radius: 0 0 4px 4px;
+    margin-left: 2px;
+    padding: 2px 10px;
+}
+
+.movie ul.actions li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.movie ul.actions li {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.movie ul.actions li.selected {
+    color: #000;
+}
+
+.movie ul.actions li a {
+    color: #777;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.movie ul.actions li.selected a {
+    color: #333;
+}
+
+.movie .movie-cover {
+    width: 100px;
+    height: 200px;
+    float: left;
+}
+
+.movie .tabcontent {
+    margin-left: 120px;    
+}
+
+.movie .movie-details {
+}
+
+.movie .movie-details .castlist .person {
+}
+
+.movie .movie-details .castlist .character:before {
+    content: '... ';
+}
+
+.movie .movie-details .castlist .character {
+    color: #666;
+}
+
+.movie .movie-notes textarea {
+    width: 500px;
+    height: 140px;
+}
+
+/* seenon */
+.movie .metadata .seenon {
+    font-size: 11px;
+}
+
+.movie .metadata .seenon .value {
+    font-weight: bold;
+}
+
+.movie .metadata .seenon .value:hover {
+    color: #000;
+    background: yellow;
+}
+
+.movie .metadata .seenoneditor {
+    font-size: 10px;
+    width: 80px;
+}
+
+/* rating */
+.rating .star {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    background: url(star-matrix.gif) no-repeat 0 0;
+}
+
+.rating .star.on {
+    background: url(star-matrix.gif) no-repeat 0 -16px;
+}
+
+.ajaxloader {
+    float: left;
+    width: 16px;
+    height: 11px;
+    margin: 5px 0 0 10px;
+    display: none;
+}
+
+#searchmovieform {
+    padding: 10px;
+    border-radius: 4px;
+    background: #F7F3E8;
+    margin-bottom: 20px;
+}
+
+#searchmovieform h3 {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+#searchmovieform input[type="text"] {
+    text-align: center;
+    min-width: 300px;
+}
